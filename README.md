@@ -27,13 +27,10 @@ This project demonstrates a comprehensive data cleaning and preprocessing workfl
 ----
 Key objectives:
 ----
-Identify and handle missing, blank, and malformed data.
-
-Standardize categorical and date fields.
-
-Create derived columns for better usability.
-
-Detect and report duplicate records.
+* Identify and handle missing, blank, and malformed data.
+* Standardize categorical and date fields.
+* Create derived columns for better usability.
+* Detect and report duplicate records.
 ----
 Dataset
 ----
