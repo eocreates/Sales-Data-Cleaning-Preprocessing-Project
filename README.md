@@ -62,4 +62,40 @@ This project demonstrates SQL-based data cleaning and preprocessing using a real
 | TERRITORY                    | Sales territory                             |
 | CONTACTFIRSTNAME / LASTNAME  | Customer contact name                       |
 | DEALSIZE                     | Size of the deal                            |
+----
+Data Cleaning Process
+----
+1. Load Data
+Data was loaded into SQL Server Management Studio using the Import Data Wizard (Tasks → Import Data).
 
+2. Handling NULL and Missing Values
+All empty strings ('') were converted to NULL using NULLIF() for consistent handling of missing data.
+```sql
+UPDATE sales_data_sample
+SET 
+ORDERNUMBER = NULLIF(ORDERNUMBER,''),
+QUANTITYORDERED = NULLIF(QUANTITYORDERED,''),
+PRICEEACH = NULLIF(PRICEEACH,''),
+ORDERLINENUMBER = NULLIF(ORDERLINENUMBER,''),
+SALES = NULLIF(SALES,''),
+ORDERDATE = NULLIF(ORDERDATE,''),
+`STATUS` = NULLIF(`STATUS`,''),
+QTR_ID = NULLIF(QTR_ID,''),
+MONTH_ID = NULLIF(MONTH_ID,''),
+YEAR_ID = NULLIF(YEAR_ID,''),
+PRODUCTLINE = NULLIF(PRODUCTLINE,''),
+MSRP = NULLIF(MSRP,''),
+PRODUCTCODE = NULLIF(PRODUCTCODE,''),
+CUSTOMERNAME = NULLIF(CUSTOMERNAME,''),
+PHONE = NULLIF(PHONE,''),
+ADDRESSLINE1 = NULLIF(ADDRESSLINE1,''),
+ADDRESSLINE2 = NULLIF(ADDRESSLINE2,''),
+CITY = NULLIF(CITY,''),
+STATE = NULLIF(STATE,''),
+POSTALCODE = NULLIF(POSTALCODE,''),
+COUNTRY = NULLIF(COUNTRY,''),
+TERRITORY = NULLIF(TERRITORY,''),
+CONTACTLASTNAME = NULLIF(CONTACTLASTNAME,''),
+CONTACTFIRSTNAME = NULLIF(CONTACTFIRSTNAME,''),
+DEALSIZE = NULLIF(DEALSIZE,'');
+```
