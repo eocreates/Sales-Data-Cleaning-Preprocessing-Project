@@ -65,8 +65,7 @@ This project demonstrates SQL-based data cleaning and preprocessing using a real
 ----
 Data Cleaning Process
 ----
-**1.Load Data**
-
+## **1. Load Data**
 Data was loaded into SQL Server Management Studio using the Import Data Wizard (Tasks → Import Data).
 
 2 Handling NULL and Missing Values
