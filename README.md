@@ -163,8 +163,9 @@ SELECT RAW_ORDERDATE FROM sales_data_sample;
 
 UPDATE sales_data_sample
 SET ORDERDATE = STR_TO_DATE(SUBSTRING_INDEX(ORDERDATE, ' ', 1), '%m/%d/%Y');
+```
 A new column, Month_Name, was derived for easier month-based analysis:
-
+```sql
 SELECT ORDERDATE,MONTH_ID
 FROM sales_data_sample;
 
