@@ -69,7 +69,6 @@ Data Cleaning Process
 Data was loaded into SQL Server Management Studio using the Import Data Wizard (Tasks → Import Data).
 
 ## **2. Handling NULL and Missing Values**
-----
 All empty strings ('') were converted to NULL using NULLIF() for consistent handling of missing data.
 ```sql
 UPDATE sales_data_sample
