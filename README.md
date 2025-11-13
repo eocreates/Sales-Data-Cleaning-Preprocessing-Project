@@ -7,14 +7,14 @@ Table of Contents
   - Key Objectives:
  - **Dataset**
  - **Data Cleaning Process**
-   -Load Data
-2. Handling NULL and Missing Values
-3. Standardizing Numeric Columns
-4. Standardizing Dates
-5. Standardizing Categorical Columns
-6. Standardizing State & City
-7. Creating Fullname Columns
-8. Duplicate Detection
-Key Outcomes
-Skills Demonstrated
-Conclusion
+    - Load Data
+    - Handling NULL and Missing Values
+    - Standardizing Numeric Columns
+    - Standardizing Dates
+    - Standardizing Categorical Columns
+    - Standardizing State & City
+    - Creating Fullname Columns
+    - Duplicate Detection
+ - **Key Outcomes**
+ - **Skills Demonstrated**
+ - **Conclusion**
