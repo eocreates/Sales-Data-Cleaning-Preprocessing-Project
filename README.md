@@ -31,7 +31,7 @@ Key objectives:
 * Standardize categorical and date fields.
 * Create derived columns for better usability.
 * Detect and report duplicate records.
-----
+
 Dataset
 ----
 This project demonstrates SQL-based data cleaning and preprocessing using a real-world dataset.This datateset is gotten from kaggle.com The dataset used in this project is:
