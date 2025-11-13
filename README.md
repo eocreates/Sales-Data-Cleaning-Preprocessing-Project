@@ -5,18 +5,9 @@ Table of Contents
 -----
 - **Project Overview**
   - Key Objectives:
-    - Clean and preprocess raw sales data
-    - Standardize column names
-    - Handle missing values
-    - Remove duplicates
-    - Extract date-based insights
-
-
-Project Overview
-Key objectives
-Dataset
-Data Cleaning Process
-1. Load Data
+ - **Dataset**
+ - **Data Cleaning Process**
+   -Load Data
 2. Handling NULL and Missing Values
 3. Standardizing Numeric Columns
 4. Standardizing Dates
