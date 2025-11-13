@@ -35,4 +35,31 @@ Key objectives:
 Dataset
 ----
 This project demonstrates SQL-based data cleaning and preprocessing using a real-world dataset.This datateset is gotten from kaggle.com The dataset used in this project is:
-sales_data_sample.csv
+[sales_data_sample.csv](https://www.kaggle.com/datasets/kyanyoga/sample-sales-data)
+
+| Column Name                  | Description                                 |
+|------------------------------|---------------------------------------------|
+| ORDERNUMBER                  | Unique order identifier                     |
+| QUANTITYORDERED              | Quantity of products in the order           |
+| PRICEEACH                    | Unit price of the product                   |
+| ORDERLINENUMBER              | Line number in the order                    |
+| SALES                        | Total sales amount                          |
+| ORDERDATE                    | Date of the order                           |
+| STATUS                       | Current status of the order                 |
+| QTR_ID                       | Quarter of the order                        |
+| MONTH_ID                     | Month number of the order                   |
+| YEAR_ID                      | Year of the order                           |
+| PRODUCTLINE                  | Category of the product                     |
+| MSRP                         | Manufacturer's suggested retail price       |
+| PRODUCTCODE                  | Unique product identifier                   |
+| CUSTOMERNAME                 | Name of the customer                        |
+| PHONE                        | Customer phone number                       |
+| ADDRESSLINE1 / ADDRESSLINE2  | Customer address                            |
+| CITY                         | City of the customer                        |
+| STATE                        | State of the customer                       |
+| POSTALCODE                   | Postal code                                 |
+| COUNTRY                      | Country of the customer                     |
+| TERRITORY                    | Sales territory                             |
+| CONTACTFIRSTNAME / LASTNAME  | Customer contact name                       |
+| DEALSIZE                     | Size of the deal                            |
+
