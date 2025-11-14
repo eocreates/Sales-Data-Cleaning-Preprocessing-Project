@@ -7,7 +7,7 @@ Table of Contents
   - [Key Objectives:](#Key-Objectives)
  - [**Dataset**](#Dataset)
  - [**Data Cleaning Process**](#Data-Cleaning-Process)
-    -[Load Data](#Load-Data)
+    -[Load Data](#1-Load-Data)
     - [Handling NULL and Missing Values](#Handling-NULL-and-Missing-Values)
     - [Standardizing Numeric Columns](#Standardizing-Numeric-Columns)
     - [Standardizing Dates](#Standardizing-Dates)
