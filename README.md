@@ -226,3 +226,148 @@ END;
 |--------|--------|
 | <img src="https://raw.githubusercontent.com/eocreates/eocreates/main/Before.jpg" width="300"/> | <img src="https://raw.githubusercontent.com/eocreates/eocreates/main/After.jpg" width="300"/> |
 
+````sql
+UPDATE sales_data_sample
+SET STATE = CASE 
+WHEN State IS NULL AND City = 'NYC' THEN 'New York'
+WHEN State IS NULL AND City = 'Reims' THEN 'Grand Est'
+WHEN State IS NULL AND City = 'Paris' THEN 'Île-de-France'
+WHEN State IS NULL AND City = 'Pasadena' THEN 'California'
+WHEN State IS NULL AND City = 'San Francisco' THEN 'California'
+WHEN State IS NULL AND City = 'Burlingame' THEN 'California'
+WHEN State IS NULL AND City = 'Lille' THEN 'Hauts-de-France'
+WHEN State IS NULL AND City = 'Bergen' THEN 'Vestland'
+WHEN State IS NULL AND City = 'Melbourne' THEN 'Victoria'
+WHEN State IS NULL AND City = 'Newark' THEN 'New Jersey'
+WHEN State IS NULL AND City = 'Bridgewater' THEN 'Connecticut'
+WHEN State IS NULL AND City = 'Nantes' THEN 'Pays de la Loire'
+WHEN State IS NULL AND City = 'Cambridge' THEN 'Massachusetts'
+WHEN State IS NULL AND City = 'Helsinki' THEN 'Uusimaa'
+WHEN State IS NULL AND City = 'Stavern' THEN 'Vestfold'
+WHEN State IS NULL AND City = 'Allentown' THEN 'Pennsylvania'
+WHEN State IS NULL AND City = 'Salzburg' THEN 'Salzburg'
+WHEN State IS NULL AND City = 'Chatswood' THEN 'New South Wales'
+WHEN State IS NULL AND City = 'New Bedford' THEN 'Massachusetts'
+WHEN State IS NULL AND City = 'Liverpool' THEN 'England'
+WHEN State IS NULL AND City = 'Madrid' THEN 'Community of Madrid'
+WHEN State IS NULL AND City = 'Lule' THEN 'Norrbotten County'
+WHEN State IS NULL AND City = 'Singapore' THEN 'Singapore'
+WHEN State IS NULL AND City = 'South Brisbane' THEN 'Queensland'
+WHEN State IS NULL AND City = 'Philadelphia' THEN 'Pennsylvania'
+WHEN State IS NULL AND City = 'Lyon' THEN 'Auvergne-Rhône-Alpes'
+WHEN State IS NULL AND City = 'Vancouver' THEN 'British Columbia'
+WHEN State IS NULL AND City = 'Burbank' THEN 'California'
+WHEN State IS NULL AND City = 'New Haven' THEN 'Connecticut'
+WHEN State IS NULL AND City = 'Minato-ku' THEN 'Tokyo Metropolis'
+WHEN State IS NULL AND City = 'Torino' THEN 'Piedmont'
+WHEN State IS NULL AND City = 'Boras' THEN 'Västra Götaland County'
+WHEN State IS NULL AND City = 'Versailles' THEN 'Île-de-France'
+WHEN State IS NULL AND City = 'San Rafael' THEN 'California'
+WHEN State IS NULL AND City = 'Nashua' THEN 'New Hampshire'
+WHEN State IS NULL AND City = 'Brickhaven' THEN 'Massachusetts'
+WHEN State IS NULL AND City = 'North Sydney' THEN 'New South Wales'
+WHEN State IS NULL AND City = 'Montreal' THEN 'Quebec'
+WHEN State IS NULL AND City = 'Osaka' THEN 'Osaka Prefecture'
+WHEN State IS NULL AND City = 'White Plains' THEN 'New York'
+WHEN State IS NULL AND City = 'Kobenhavn' THEN 'Copenhagen'
+WHEN State IS NULL AND City = 'London' THEN 'England'
+WHEN State IS NULL AND City = 'Toulouse' THEN 'Occitanie'
+WHEN State IS NULL AND City = 'Barcelona' THEN 'Catalonia'
+WHEN State IS NULL AND City = 'Los Angeles' THEN 'California'
+WHEN State IS NULL AND City = 'San Diego' THEN 'California'
+WHEN State IS NULL AND City = 'Bruxelles' THEN 'Brussels'
+WHEN State IS NULL AND City = 'Tsawassen' THEN 'British Columbia'
+WHEN State IS NULL AND City = 'Boston' THEN 'Massachusetts'
+WHEN State IS NULL AND City = 'Cowes' THEN 'Isle of Wight'
+WHEN State IS NULL AND City = 'Oulu' THEN 'North Ostrobothnia'
+WHEN State IS NULL AND City = 'San Jose' THEN 'California'
+WHEN State IS NULL AND City = 'Graz' THEN 'Styria'
+WHEN State IS NULL AND City = 'Makati City' THEN 'Metro Manila'
+WHEN State IS NULL AND City = 'Marseille' THEN 'Provence-Alpes-Côte d’Azur'
+WHEN State IS NULL AND City = 'Koln' THEN 'North Rhine-Westphalia'
+WHEN State IS NULL AND City = 'Gensve' THEN 'Geneva'
+WHEN State IS NULL AND City = 'Reggio Emilia' THEN 'Emilia-Romagna'
+WHEN State IS NULL AND City = 'Frankfurt' THEN 'Hesse'
+WHEN State IS NULL AND City = 'Espoo' THEN 'Uusimaa'
+WHEN State IS NULL AND City = 'Dublin' THEN 'Leinster'
+WHEN State IS NULL AND City = 'Manchester' THEN 'England'
+WHEN State IS NULL AND City = 'Aaarhus' THEN 'Central Denmark Region'
+WHEN State IS NULL AND City = 'Glendale' THEN 'California'
+WHEN State IS NULL AND City = 'Sevilla' THEN 'Andalusia'
+WHEN State IS NULL AND City = 'Brisbane' THEN 'Queensland'
+WHEN State IS NULL AND City = 'Strasbourg' THEN 'Grand Est'
+WHEN State IS NULL AND City = 'Las Vegas' THEN 'Nevada'
+WHEN State IS NULL AND City = 'Oslo' THEN 'Oslo County'
+WHEN State IS NULL AND City = 'Bergamo' THEN 'Lombardy'
+WHEN State IS NULL AND City = 'Glen Waverly' THEN 'Victoria'
+WHEN State IS NULL AND City = 'Munich' THEN 'Bavaria'
+WHEN State IS NULL AND City = 'Charleroi' THEN 'Wallonia'
+ELSE State 
+END;
+````
+
+## **7. Creating Fullname Columns**
+FULL_NAME column created by concatenating first and last names:
+
+````sql
+SELECT CONTACTFIRSTNAME,CONTACTLASTNAME,
+TRIM(CONCAT(CONTACTFIRSTNAME,' ', CONTACTLASTNAME))
+FROM sales_data_sample;
+
+ALTER TABLE sales_data_sample
+ADD COLUMN FULL_NAME VARCHAR(100);
+
+UPDATE sales_data_sample
+SET FULL_NAME = TRIM(CONCAT(CONTACTFIRSTNAME,' ', CONTACTLASTNAME));
+
+SELECT FULL_NAME FROM sales_data_sample;
+````
+
+## **8. Duplicate Detection**
+Checked for duplicates at multiple levels:
+
+1. Customer + Order + Product
+````sql
+SELECT CUSTOMERNAME, ORDERDATE, PRODUCTCODE, COUNT(*) AS count
+FROM sales_data_sample
+GROUP BY CUSTOMERNAME, ORDERDATE, PRODUCTCODE
+HAVING COUNT(*) > 1;
+````
+
+2. Order + Line Number
+````sql
+SELECT ORDERNUMBER, ORDERLINENUMBER, COUNT(*) AS count
+FROM sales_data_sample
+GROUP BY ORDERNUMBER, ORDERLINENUMBER
+HAVING COUNT(*) > 1;
+````
+
+3.Order + Productcode
+```sql
+SELECT ORDERNUMBER, PRODUCTCODE, COUNT(*) AS count
+FROM sales_data_sample
+GROUP BY ORDERNUMBER, PRODUCTCODE
+HAVING COUNT(*) > 1;
+````
+
+## **Key Outcomes**
+* Missing and malformed values were handled.
+* Numeric, categorical, and date columns standardized.
+* Derived columns (FULL_NAME, Month_Name) added for easier analysis.
+* Duplicate records identified for review or removal.
+* Data is now ready for visualization, analysis, and reporting.
+
+## **Skills Demonstrated**
+* SQL Data Cleaning & Transformation
+* Handling NULL and inconsistent values
+* Standardizing categorical and date fields
+* Duplicate detection & reporting
+* Creating derived fields for analysis
+* Preparing data for Analytics and BI projects
+
+## **Conclusion**
+This project demonstrates a full-fledged data cleaning workflow, converting raw sales data into a clean, structured dataset suitable for analysis, dashboards, and machine learning tasks.
+
+
+
+
