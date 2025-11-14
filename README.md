@@ -222,6 +222,7 @@ END;
 ```
 * Mapped abbreviations and missing states using city names: Here all state with null values are derived by getting the names of the city from the city column and then comaring it with the state column, by using this i can easily derive the state name from the city where the state is null. this is fully successfull because all city column are give.
   
-  | Before | After |
+| Before | After |
 |--------|--------|
-| <img src="(https://github.com/eocreates/eocreates/blob/main/Before.jpg)" width="250"/> | <img src="(https://github.com/eocreates/eocreates/blob/main/After.jpg)" width="250"/> |
+| <img src="https://raw.githubusercontent.com/eocreates/eocreates/main/Before.jpg" width="300"/> | <img src="https://raw.githubusercontent.com/eocreates/eocreates/main/After.jpg" width="300"/> |
+
