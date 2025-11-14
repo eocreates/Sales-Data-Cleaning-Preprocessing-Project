@@ -224,4 +224,4 @@ END;
   
   | Before | After |
 |--------|--------|
-| <img src="[images/Screenshot_before.jpeg](https://github.com/eocreates/eocreates/blob/main/Before.jpg)" width="250"/> | <img src="[images/Screenshot_after.jpeg](https://github.com/eocreates/eocreates/blob/main/After.jpg)" width="250"/> |
+| <img src="(https://github.com/eocreates/eocreates/blob/main/Before.jpg)" width="250"/> | <img src="(https://github.com/eocreates/eocreates/blob/main/After.jpg)" width="250"/> |
